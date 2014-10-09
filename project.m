@@ -1,42 +1,16 @@
-// Part 1
-var = load_figure();
-x = format_coordinate(1, var);
-y = format_coordinate(2, var);
-x = center_axis(x);
-y = center_axis(y);
-clf;
-plot(x,y);
-grid on;
-hold on;
+%Name: Jacob Reichard and Daniel Lineberger
+%Project: Project 1: Intro to Matlab
+%Date: 10/9/2014
+%Class: CS1300 Computational Linear Algebra
+%Professor: Dr. Terry Boult
 
-// Part 2
-translist = load_transform;
-transforms = format_transform(translist);
-translation = format_translation(translist);
-new_figure = transform_figure(x, y, transforms);
-x = format_coordinate(1,new_figure);
-y = format_coordinate(2,new_figure);
-axis_scale = get_axis_values(x,y);
-print_axis_scale(axis_scale);
-axis(axis_scale);
-plot(x,y);
-
-// Part 3
-%mtx = load("~/Octave/Proj-1/affine.txt");
-mtx = load_affine;
-i = 1;
-axiss = format_axis(mtx);
-origins = format_origin(mtx);
-test = size(var);
-
-fun = var;
-while i < test(1)
-fun (i, :) = transpose(origins+(axiss*transpose(fun(i, :))));
-fun (i, 2) = fun(i, 2)+1;
-i = i + 1;
-end
-
-x = format_coordinate(1, fun);
-y = format_coordinate(2, fun);
-axis(axis_scale);
-plot(x,y);
+%Purpose: This project was a basic introduction to matlab.  The assignment
+%was broken up into three parts, each building off of the functionality of
+%the previous.  The first part simply reads a file containing points of a 
+%figure and plots the figure centered around the origin.  The second part
+%takes the figure and shears it, and possibly transforms it.  The final 
+%part reads a list of new origin points and new axis and transforms the 
+%figure to fit the new target box.
+part1();
+part2();
+part3();
