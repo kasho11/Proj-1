@@ -2,8 +2,8 @@
 %matrix
 function retval = translate_figure(coordx, coordy, translate)
 	coordinates = [coordx, coordy];
-	coordinates(:,1) = coordinates(:,1) + transform(1);
-	coordinates(:,2) = coordinates(:,2) + transform(2);
+	coordinates(:,1) = coordinates(:,1) + translate(1);
+	coordinates(:,2) = coordinates(:,2) + translate(2);
 	retval = coordinates;
 endfunction
 	
