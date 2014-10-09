@@ -1,6 +1,4 @@
-translist = load_transform;
-transforms = format_transform(translist);
-translation = format_translation(translist);
+// Part 1
 var = load_figure();
 x = format_coordinate(1, var);
 y = format_coordinate(2, var);
@@ -10,6 +8,11 @@ clf;
 plot(x,y);
 grid on;
 hold on;
+
+// Part 2
+translist = load_transform;
+transforms = format_transform(translist);
+translation = format_translation(translist);
 new_figure = transform_figure(x, y, transforms);
 x = format_coordinate(1,new_figure);
 y = format_coordinate(2,new_figure);
@@ -17,6 +20,8 @@ axis_scale = get_axis_values(x,y);
 print_axis_scale(axis_scale);
 axis(axis_scale);
 plot(x,y);
+
+// Part 3
 %mtx = load("~/Octave/Proj-1/affine.txt");
 mtx = load_affine;
 i = 1;
