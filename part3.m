@@ -5,8 +5,8 @@ function retval = part3()
 	%while also formatting the affine values into proper matricies
 	var = load_figure();
 	mtx = load_affine;
-	axiss = format_axis(mtx);
-	origins = format_origin(mtx);
+	axiss = format_axis(mtx(1,:));
+	origins = format_origin(mtx(1,:));
 	
 	%These command applies the affine map to all points in the figure
 	%and formats the figure to be plotted
@@ -20,5 +20,6 @@ function retval = part3()
 	axis_scale = get_axis_values(x,y);
 	print_axis_scale(axis_scale);
 	axis(axis_scale);
+	clf;
 	plot(x,y);
 endfunction

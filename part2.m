@@ -3,7 +3,7 @@ function retval = part2()
 	
 	%Here, two figures are loaded and prepared for plotting
 	var = load_figure();
-	printf("Get ready to load a second figure");
+	printf("Get ready to load a second figure\n");
 	var2 = load_figure();
 	x = format_coordinate(1, var);
 	y = format_coordinate(2, var);
